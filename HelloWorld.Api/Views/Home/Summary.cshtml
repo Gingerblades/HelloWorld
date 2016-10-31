@@ -1,0 +1,24 @@
+﻿@model IEnumerable<HelloWorld.Api.Models.HelloWorld>
+
+    <div class="panel-heading">Hello Worlds</div>
+    <div class="panel-body">
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr><th>Hello Word</th><th>World Word</th><th></th></tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.HelloWord</td>
+                        <td>@item.WorldWord</td>
+                        <td>
+                            @Html.ActionLink("Remove", "Remove",
+                            new { id = item.HelloId },
+                            new { @class = "btn btn-xs btn-primary" })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>

@@ -1,0 +1,20 @@
+﻿@using HelloWorld.Api.Models
+
+@model IEnumerable<HelloWorld>
+@{
+    ViewBag.Title = "Hello world.";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Scripts{
+    
+}
+
+@section Body{
+    <div id="summary" class="section panel panel-primary">
+        @Html.Partial("Summary", Model)
+    </div>
+    <div id="editor" class="section panel panel-primary">
+        @Html.Partial("Editor", new HelloWorld())
+    </div>
+}

@@ -1,0 +1,17 @@
+﻿@model HelloWorld.Api.Models.HelloWorld
+
+<div class="panel-heading">Add Hello</div>
+<div class="panel-body">
+    @using (Html.BeginForm("Add", "Home"))
+    {
+        <div class="form-group">
+            <label>Hello Word</label>
+            @Html.TextBoxFor(m => m.HelloWord, new {@class = "form-control"})
+        </div>
+        <div class="form-group">
+            <label>World Word</label>
+            @Html.TextBoxFor(m => m.WorldWord, new { @class = "form-control" })
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+    }
+</div>
